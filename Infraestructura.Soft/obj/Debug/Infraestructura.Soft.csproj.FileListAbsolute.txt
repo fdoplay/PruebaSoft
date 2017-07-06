@@ -1,0 +1,11 @@
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Infraestructura.Soft.dll
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Infraestructura.Soft.pdb
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Domain.Soft.dll
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Domain.Soft.pdb
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\obj\Debug\Infraestructura.Soft.csprojResolveAssemblyReference.cache
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\obj\Debug\Infraestructura.Soft.dll
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Infraestructura.Soft\obj\Debug\Infraestructura.Soft.pdb
