@@ -13,12 +13,14 @@ namespace AppSoft.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Pagina Principal";
-            //GestionCrearTabla cld = new GestionCrearTabla();
-            //cld.CreaTablas();
-            //SaveData();
+            GestionCrearTabla cld = new GestionCrearTabla();
+            cld.CreaTablas();
+            SaveData();
             return View();
         }
-
+        /// <summary>
+        /// Cargamos los datos del api brindada
+        /// </summary>
         private void SaveData()
         {
             List<Domain.Soft.specialties> espe = Get_Specialties();
@@ -28,7 +30,7 @@ namespace AppSoft.Controllers
             List<Domain.Soft.patients> pacientes = Get_Patients();
             var pacien= new Aplication.Soft.GestionPatients().Save(pacientes);
         }
-
+        #region Obtener los datos de la api
         private List<Domain.Soft.specialties> Get_Specialties()
         {
             List<Domain.Soft.specialties> result = new List<Domain.Soft.specialties>();
@@ -92,5 +94,7 @@ namespace AppSoft.Controllers
             }
             return result;
         }
+
+        #endregion
     }
 }
