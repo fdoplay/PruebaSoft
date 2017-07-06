@@ -1,0 +1,158 @@
+﻿<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <b>Lista de especialidades</b>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <table class="table table-bordered table-striped table-hover" id="tblespe">
+                    <thead>
+                        <tr>
+                            <td align="center">id</td>
+                            <td align="center">specialty type</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <b>Lista de Medicos</b>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <table class="table table-bordered table-striped table-hover" id="tbldoc">
+                    <thead>
+                        <tr>
+                            <td align="center">id</td>
+                            <td align="center">identification</td>
+                            <td align="center">first name</td>
+                            <td align="center">last name</td>
+                            <td align="center">blood type</td>
+                            <td align="center">specialty type</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <b>Lista de pacientes</b>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <table class="table table-bordered table-striped table-hover" id="tblparien">
+                    <thead>
+                        <tr>
+                            <td align="center">id</td>
+                            <td align="center">history</td>
+                            <td align="center">identification</td>
+                            <td align="center">first name</td>
+                            <td align="center">last name</td>
+                            <td align="center">genre</td>
+                            <td align="center">civil status</td>
+                            <td align="center">blood type</td>
+                            <td align="center">date birth</td>
+                            <td align="center">city birth</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(function () {
+            CargarMedicos();
+            CargarEspecialidad();
+            CargarPacientes();
+        });
+        function CargarMedicos() {
+            $("#tbldoc tbody").empty();
+            $.ajax({
+                url: "/api/doctors",
+                data: {},
+                type: "GET",
+                dataType: "json",
+                async: false
+            }).done(function (data) {
+                if (typeof (data) == "object") {
+                    $.each(data, function (i, e) {
+                        $("#tbldoc tbody").append('<tr><td>' + e.id +
+                            '</td><td>' + e.identification +
+                            '</td><td>' + e.first_name +
+                            '</td><td>' + e.last_name +
+                            '</td><td>' + e.blood_type +
+                            '</td><td>' + e.specialty_field.specialty_type + '</td></tr>');
+                    });
+                }
+            }).fail(function (xhr, status, error) {
+                alert(error);
+            }).always(function () {
+                //jQuery.unblockUI();
+            });
+            return false;
+        }
+        function CargarEspecialidad() {
+            $("#tblespe tbody").empty();
+            $.ajax({
+                url: "/api/specialties",
+                data: {},
+                type: "GET",
+                dataType: "json",
+                async: false
+            }).done(function (data) {
+                if (typeof (data) == "object") {
+                    $.each(data, function (i, e) {
+                        $("#tblespe tbody").append('<tr><td>' + e.id +
+                            '</td><td>' + e.specialty_type +'</td></tr>');
+                    });
+                }
+            }).fail(function (xhr, status, error) {
+                alert(error);
+            }).always(function () {
+                //jQuery.unblockUI();
+            });
+            return false;
+        }
+        function CargarPacientes()
+        {
+            $("#tblparien tbody").empty();
+            $.ajax({
+                url: "/api/patients",
+                data: {},
+                type: "GET",
+                dataType: "json",
+                async: false
+            }).done(function (data) {
+                if (typeof(data)=="object")
+                {   
+                    $.each(data, function (i, e) {
+                        $("#tblparien tbody").append('<tr><td>' + e.id +
+                            '</td><td>' + e.history +
+                            '</td><td>' + e.identification +
+                            '</td><td>' + e.first_name +
+                            '</td><td>' + e.last_name +
+                            '</td><td>' + e.genre +
+                            '</td><td>' + e.civil_status +
+                            '</td><td>' + e.blood_type +
+                            '</td><td>' + e.date_birth +
+                            '</td><td>' + e.city_birth + '</td></tr>');
+                    });
+                }
+            }).fail(function (xhr, status, error) {
+                alert(error);
+            }).always(function () {
+                //jQuery.unblockUI();
+            });
+            return false;
+        }
+    </script>
+}

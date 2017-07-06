@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSoft", "AppSoft\AppSoft.csproj", "{E7792A7C-DEA0-4CDC-8BF6-D6B4C071A542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSoft.Tests", "AppSoft.Tests\AppSoft.Tests.csproj", "{6AD20D39-7A54-4EBE-9C1C-DEA4127EDC41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{7976ED47-6E51-49CD-8BB8-7C9F7789EA92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Layer", "Business Layer", "{0B21275E-6BC5-4760-8387-8A8CCF2CBF3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{E9C89B9B-DCD1-4EFE-9432-F48BBD21B581}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{3FE6BB1D-B13F-46F5-A496-CD257764593E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Soft", "Domain.Soft\Domain.Soft.csproj", "{FB64086C-7031-4446-A767-F88EA31BB795}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplication.Soft", "Aplication.Soft\Aplication.Soft.csproj", "{5AF41026-9775-4CDD-9A7F-E7038CC54A91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructura.Soft", "Infraestructura.Soft\Infraestructura.Soft.csproj", "{8F43ECA9-1A82-4836-BC6C-A8CD01F2818B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7792A7C-DEA0-4CDC-8BF6-D6B4C071A542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7792A7C-DEA0-4CDC-8BF6-D6B4C071A542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7792A7C-DEA0-4CDC-8BF6-D6B4C071A542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7792A7C-DEA0-4CDC-8BF6-D6B4C071A542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD20D39-7A54-4EBE-9C1C-DEA4127EDC41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD20D39-7A54-4EBE-9C1C-DEA4127EDC41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD20D39-7A54-4EBE-9C1C-DEA4127EDC41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD20D39-7A54-4EBE-9C1C-DEA4127EDC41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB64086C-7031-4446-A767-F88EA31BB795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB64086C-7031-4446-A767-F88EA31BB795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB64086C-7031-4446-A767-F88EA31BB795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB64086C-7031-4446-A767-F88EA31BB795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF41026-9775-4CDD-9A7F-E7038CC54A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF41026-9775-4CDD-9A7F-E7038CC54A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF41026-9775-4CDD-9A7F-E7038CC54A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF41026-9775-4CDD-9A7F-E7038CC54A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F43ECA9-1A82-4836-BC6C-A8CD01F2818B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F43ECA9-1A82-4836-BC6C-A8CD01F2818B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F43ECA9-1A82-4836-BC6C-A8CD01F2818B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F43ECA9-1A82-4836-BC6C-A8CD01F2818B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7792A7C-DEA0-4CDC-8BF6-D6B4C071A542} = {3FE6BB1D-B13F-46F5-A496-CD257764593E}
+		{0B21275E-6BC5-4760-8387-8A8CCF2CBF3C} = {7976ED47-6E51-49CD-8BB8-7C9F7789EA92}
+		{E9C89B9B-DCD1-4EFE-9432-F48BBD21B581} = {7976ED47-6E51-49CD-8BB8-7C9F7789EA92}
+		{3FE6BB1D-B13F-46F5-A496-CD257764593E} = {7976ED47-6E51-49CD-8BB8-7C9F7789EA92}
+		{FB64086C-7031-4446-A767-F88EA31BB795} = {0B21275E-6BC5-4760-8387-8A8CCF2CBF3C}
+		{5AF41026-9775-4CDD-9A7F-E7038CC54A91} = {0B21275E-6BC5-4760-8387-8A8CCF2CBF3C}
+		{8F43ECA9-1A82-4836-BC6C-A8CD01F2818B} = {E9C89B9B-DCD1-4EFE-9432-F48BBD21B581}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

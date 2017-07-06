@@ -1,0 +1,5 @@
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Domain.Soft\bin\Debug\Domain.Soft.dll
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Domain.Soft\bin\Debug\Domain.Soft.pdb
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Domain.Soft\obj\Debug\Domain.Soft.csprojResolveAssemblyReference.cache
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Domain.Soft\obj\Debug\Domain.Soft.dll
+D:\Francisco\Andy\Fuentes\GaviPrueba\AppSoft\Domain.Soft\obj\Debug\Domain.Soft.pdb

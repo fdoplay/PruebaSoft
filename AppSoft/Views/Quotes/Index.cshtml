@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewBag.Title = "Citas Medicas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section style
+{
+    <link rel="stylesheet" type="text/css" media="screen" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css">
+}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="jarviswidget jarviswidget-color-yellow">
+            <header>
+                <h2> Añadir Citas </h2>
+            </header>
+            <div>
+                <div class="widget-body">
+                    <form id="add-event-form" onsubmit="return Save();">
+                        <input type="hidden" id="hidid" value="0" />
+                        <fieldset>
+                            <div class="form-group">
+                                <label>Seleccionar el incono del evento</label>
+                                <div class="btn-group btn-group-sm btn-group-justified" data-toggle="buttons">
+                                    <label class="btn btn-default active">
+                                        <input type="radio" name="iconselect" id="icon-1" value="fa-info" checked>
+                                        <i class="fa fa-info text-muted"></i>
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="iconselect" id="icon-2" value="fa-warning">
+                                        <i class="fa fa-warning text-muted"></i>
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="iconselect" id="icon-3" value="fa-check">
+                                        <i class="fa fa-check text-muted"></i>
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="iconselect" id="icon-4" value="fa-user">
+                                        <i class="fa fa-user text-muted"></i>
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="iconselect" id="icon-5" value="fa-lock">
+                                        <i class="fa fa-lock text-muted"></i>
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="iconselect" id="icon-6" value="fa-clock-o">
+                                        <i class="fa fa-clock-o text-muted"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Doctores</label>
+                                <select id="dlldoctor" class="form-control" required>
+                                    <option value="">Seleccionar Doctor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Pacientes</label>
+                                <select id="dllpaciente" class="form-control" required>
+                                    <option value="">Seleccionar Paciente</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Descripción Cita</label>
+                                <input class="form-control" id="titulo" maxlength="40" type="text" placeholder="Titulo" required>
+                            </div>
+                            @*<div class="form-group">
+                                <label>Descripción</label>
+                                <textarea class="form-control" placeholder="Por favor sea breve" rows="3" maxlength="40" id="descripcion" name="descripcion" required></textarea>
+                                <p class="note">Longitud maxima de 40 caracteres</p>
+                            </div>*@
+                            <div class="col-xs-12 col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label>Fecha Inicio</label>
+                                    <input type="text" class="form-control" id="fechainicio" name="fechainicio" required/>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>Hora Inicio</label>
+                                    <input type="text" class="form-control" id="horainicio" name="horainicio" required />
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label>Hora Inicio</label>
+                                    <input type="text" class="form-control" id="horafin" name="horafin" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Estado</label>
+                                <select class="form-control" id="estado">
+                                    <option value="1">Pendiente</option>
+                                    <option value="2">Resuelto</option>
+                                    <option value="3">Cancelado</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Seleccionar el color del evento</label>
+                                <div class="btn-group btn-group-justified btn-select-tick" data-toggle="buttons">
+                                    <label class="btn bg-color-darken active">
+                                        <input type="radio" name="priority" id="option1" value="bg-color-darken txt-color-white" checked>
+                                        <i class="fa fa-check txt-color-white"></i>
+                                    </label>
+                                    <label class="btn bg-color-blue">
+                                        <input type="radio" name="priority" id="option2" value="bg-color-blue txt-color-white">
+                                        <i class="fa fa-check txt-color-white"></i>
+                                    </label>
+                                    <label class="btn bg-color-orange">
+                                        <input type="radio" name="priority" id="option3" value="bg-color-orange txt-color-white">
+                                        <i class="fa fa-check txt-color-white"></i>
+                                    </label>
+                                    <label class="btn bg-color-greenLight">
+                                        <input type="radio" name="priority" id="option4" value="bg-color-greenLight txt-color-white">
+                                        <i class="fa fa-check txt-color-white"></i>
+                                    </label>
+                                    <label class="btn bg-color-blueLight">
+                                        <input type="radio" name="priority" id="option5" value="bg-color-blueLight txt-color-white">
+                                        <i class="fa fa-check txt-color-white"></i>
+                                    </label>
+                                    <label class="btn bg-color-red">
+                                        <input type="radio" name="priority" id="option6" value="bg-color-red txt-color-white">
+                                        <i class="fa fa-check txt-color-white"></i>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-default" type="submit" id="add-event">Guardar</button>
+                                    <button class="btn btn-default" type="button" id="btneliminar" onclick="Eliminar();" style="display:none">
+                                        Eliminar
+                                    </button>
+                                    <button class="btn btn-default" type="button" onclick="limpiar();">
+                                        Limpiar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--<div class="well well-sm" id="event-container">
+            <form>
+                <fieldset>
+                    <legend>
+                        Draggable Events
+                    </legend>
+                    <ul id='external-events' class="list-unstyled">
+                        <li>
+                            <span class="bg-color-darken txt-color-white" data-description="Currently busy" data-icon="fa-time">Office Meeting</span>
+                        </li>
+                        <li>
+                            <span class="bg-color-blue txt-color-white" data-description="No Description" data-icon="fa-pie">Lunch Break</span>
+                        </li>
+                        <li>
+                            <span class="bg-color-red txt-color-white" data-description="Urgent Tasks" data-icon="fa-alert">URGENT</span>
+                        </li>
+                    </ul>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="drop-remove" class="checkbox style-0" checked="checked">
+                            <span>remove after drop</span>
+                        </label>
+
+                    </div>
+                </fieldset>
+            </form>
+        </div>-->
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="jarviswidget jarviswidget-color-yellow">
+            <header>
+                <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
+                <h2> Mis Citas </h2>
+                <div class="widget-toolbar">
+                    <div class="btn-group">
+                        <button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+                            Demostración <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu js-status-update pull-right">
+                            <li>
+                                <a href="javascript:void(0);" id="mt">Mes</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="ag">Semana</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" id="td">Hoy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div>
+                <div class="widget-body no-padding">
+                    <div class="widget-body-toolbar">
+                        <div id="calendar-buttons">
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{    
+    
+    <script src="@Url.Content("~/Scripts/jquery.ui.datepicker-es.js")"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>*@
+    <script src="@Url.Content("~/Content/themes/smart/js/plugin/fullcalendar/jquery.fullcalendar.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Citas/Citas.js?f")"></script>
+}
